@@ -1,4 +1,4 @@
-# Venus Protocol Audit
+# Venus Prime Audit
 
 Unless otherwise discussed, this repo will be made public after audit completion, sponsor review, judging, and issue mitigation window.
 
