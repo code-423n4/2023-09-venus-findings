@@ -1,0 +1,1 @@
+[NC-01] - events for state changes should be emitted after the said state change
