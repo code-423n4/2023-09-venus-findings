@@ -1,4 +1,4 @@
-[G-1] pendingScoreUpdates can be updated at the end of updateScores instead of using `pendingScoreUpdates--` at every loop.
+[G-1] pendingScoreUpdates can be updated at the end of updateScores instead of using `pendingScoreUpdates--` at every loop, with the use of an intermediate variable in memory.
 
 ```solidity
     function updateScores(address[] memory users) external {
@@ -35,9 +35,14 @@
 ```
 
 ## Recommendation
-move `pendingScoreUpdates--` outside of the loop and replace it with 
+move `pendingScoreUpdates--` outside of the loop and replace it with the use of a counter.
 
 ```solidity
-pendingScoreUpdates -= users.length
+uint256 counter = 0;
+...
+---            pendingScoreUpdates--;
++++            counter++;
+...
+pendingScoreUpdates -= counter;
 ```
 
