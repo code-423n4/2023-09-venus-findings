@@ -77,3 +77,40 @@ This change will ensure that the length of the array is only accessed once, redu
 2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::157 => if (numTokens != distributionSpeeds_.length) {
 2023-09-venus/contracts/Tokens/Prime/libs/FixedMath0x.sol::2 => // solhint-disable max-line-length
 ```
+### [G-03] Use != 0 instead of > 0 for Unsigned Integer Comparison
+## Impact
+**Exploit Scenario** The code uses the `>` operator to compare unsigned integers to 0. This is unnecessary as unsigned integers in Solidity are always greater than or equal to 0. An attacker could potentially exploit this by causing the contract to consume more gas than necessary.
+
+**Impact** The impact of this issue is primarily economic. 
+It does not pose a direct security risk, but it can lead to higher gas costs for transactions interacting with the contract. 
+This could potentially make the contract less attractive to users due to the increased costs of interaction.
+
+**Recommendation** To optimise gas usage, the `>` operator should be replaced with the `!=` operator when comparing unsigned integers to 0. This is because unsigned integers in Solidity are always greater than or equal to 0, so a comparison to 0 is effectively a check for non-zero values.
+
+For example, the comparison in the getEffectiveDistributionSpeed function could be optimised as follows:
+**Good**
+```sol
+if (balance - accrued != 0) {
+    return distributionSpeed;
+}
+```
+**Bad**
+```sol
+if (balance - accrued > 0) {
+    return distributionSpeed;
+}
+```
+This change will ensure that the comparison is performed in the most gas-efficient manner, reducing the gas cost of the function.
+## References
+```sol
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::375 => } else if (!isAccountEligible && !tokens[user].exists && stakedAt[user] > 0) {
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::584 => if (markets[vToken].sumOfMembersScore > 0) {
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::828 => if (totalScoreUpdatesRequired > 0) totalScoreUpdatesRequired--;
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::830 => if (pendingScoreUpdates > 0 && !isScoreUpdated[nextScoreUpdateRoundId][user]) {
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::889 => supply = supplyUSD > 0 ? (supply * supplyCapUSD) / supplyUSD : 0;
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::893 => borrow = borrowUSD > 0 ? (borrow * borrowCapUSD) / borrowUSD : 0;
+2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::237 => if (balance - accrued > 0) {
+2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::257 => if (deltaBlocks > 0) {
+2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::262 => if (distributionSpeed > 0 && balanceDiff > 0) {
+2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::291 => if (initializedBlock > 0) {
+```
