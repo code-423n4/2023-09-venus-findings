@@ -114,3 +114,29 @@ This change will ensure that the comparison is performed in the most gas-efficie
 2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::262 => if (distributionSpeed > 0 && balanceDiff > 0) {
 2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::291 => if (initializedBlock > 0) {
 ```
+### [G-04] Long Revert Strings
+## Impact
+**Exploit Scenario** The code uses long revert strings. 
+In Ethereum, every operation costs gas, and this includes the storage and execution of revert strings. 
+The longer the revert string, the more gas is used. 
+An attacker could potentially exploit this by causing the contract to consume more gas than necessary.
+
+**Impact** The impact of this issue is primarily economic. 
+It does not pose a direct security risk, but it can lead to higher gas costs for transactions interacting with the contract. 
+This could potentially make the contract less attractive to users due to the increased costs of interaction.
+
+**Recommendation** To optimise gas usage, the revert strings should be made as short as possible. 
+This can be done by using abbreviations or codes instead of full sentences. 
+For example, the revert string `"updateMultipliers(address,uint256,uint256)" could be shortened to "UM".`
+
+For example, the _checkAccessAllowed function could be optimised as follows:
+```sol
+_checkAccessAllowed("UM");
+```
+This change will ensure that the revert strings are as short as possible, reducing the gas cost of the function.
+## References
+```sol
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::264 => _checkAccessAllowed("updateMultipliers(address,uint256,uint256)");
+2023-09-venus/contracts/Tokens/Prime/Prime.sol::289 => _checkAccessAllowed("addMarket(address,uint256,uint256)");
+2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol::154 => _checkAccessAllowed("setTokensDistributionSpeed(address[],uint256[])");
+```
