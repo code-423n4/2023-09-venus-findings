@@ -131,7 +131,7 @@ For example, the revert string `"updateMultipliers(address,uint256,uint256)" cou
 
 For example, the _checkAccessAllowed function could be optimised as follows:
 ```sol
-_checkAccessAllowed("UM");
+_checkAccessAllowed("updateMultipliers");
 ```
 This change will ensure that the revert strings are as short as possible, reducing the gas cost of the function.
 ## References
