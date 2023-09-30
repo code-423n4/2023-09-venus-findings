@@ -1,0 +1,1 @@
+[G-01] - upon ``_burn``-ing a prime token, you can skip the settling of ``tokens[user].isIrrevocable`` to false, since no function checks this parameter independently, they all rely on the ``.exists`` variable, making the gas used to set to false wasted
