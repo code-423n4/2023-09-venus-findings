@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0x3b",
+  "risk": "3",
+  "title": "`_capitalForScore` error will reduce the users score more than necessary ",
+  "issueId": 16,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/16"
+}
