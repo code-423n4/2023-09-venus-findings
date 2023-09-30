@@ -1,0 +1,52 @@
+# [G-01] Cache array length in for loops can save gas
+- Permalink (Github)
+[Prime.sol#L183](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L183)
+[Prime.sol#L821](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L821)
+[Prime.sol#L272](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L272)
+[Prime.sol#L286](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L286)
+[Prime.sol#L335](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L335)
+[Prime.sol#L410](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L410)
+[Prime.sol#L546](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L546)
+[Prime.sol#L791](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L791)
+[Prime.sol#L828](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L828)
+[PrimeLiquidityProvider.sol#L119](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L119)
+# [G-02] Use x = x + y instead of x += y;
+- Permalink (Github)
+[PrimeLiquidityProvider.sol#L249](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L249)
+[Prime.sol#L614C43-L614C43](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L614C43-L614C43)
+[Prime.sol#L657](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L657)
+[Prime.sol#L726](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L726)
+[Prime.sol#L908](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L908)
+# [G-03] Use ++x instead of x++
+there are 19 instances with i++/i--
+- Permalink (Github)
+[Prime.sol#L561)](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L561)
+[Prime.sol#L864](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L864)
+[Prime.sol#L861](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L861)
+[Prime.sol#L837](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L837)
+[Prime.sol#L583](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L583)
+[Prime.sol#L563](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L563)
+[Prime.sol#L187](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L187)
+[Prime.sol#L282)](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L282)
+# [G-04] No need to explicitly initialize variables with default values
+- Permalink (Github)
+[Prime.sol#L183](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L183)
+[Prime.sol#L821](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L821)
+[Prime.sol#L272](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L272)
+[Prime.sol#L286](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L286)
+[Prime.sol#L335](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L335)
+[Prime.sol#L410](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L410)
+[Prime.sol#L546](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L546)
+[Prime.sol#L791](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L791)
+[Prime.sol#L828](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L828)
+# [G-04] Constant Visibility
+Using constant as private or internal can save gas
+[PrimeStorage.sol](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/PrimeStorage.sol)
+# [G-05] Constant Do Not Calculate
+[PrimeStorage.sol](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/PrimeStorage.sol)
+# [G-06] Use != instead of >, save gas
+- Permalink (Github)
+[Prime.sol#L312)](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L312)
+[Prime.sol#L505](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L505)
+[Prime.sol#L509](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L509)
+[Prime.sol#L667](https://github.com/VenusProtocol/venus-protocol/blob/25f863877a8ef7731652a6209b23ca0c703060ba/contracts/Tokens/Prime/Prime.sol#L667)
