@@ -26,3 +26,5 @@ For total assurance, there should be
 ``` solidity
 require(_blocksPerYear == 2_628_000, "INCORRECT BLOCKS");
 ```
+
+Also, I think this should be a medium severity based on the fact that the protocol documentation states BloksPerYear wrongly in their example to be 10_512_000 blocks/year. This is wrong as that number of blocks will be 4years, so 4X reward will be distributed according to the documentation.: https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/README.md?plain=1#L254
