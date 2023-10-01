@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "updateScores alters sumOfMembersScore on _executeBoost; the rewardIndex accrues interest with a non-completely transited sumOfMembersScore during a change of alpha",
+  "issueId": 47,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/47"
+}
