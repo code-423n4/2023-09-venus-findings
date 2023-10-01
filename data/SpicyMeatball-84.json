@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "SpicyMeatball",
+  "risk": "3",
+  "title": "Error in score calculation can lead to a reward loss for users",
+  "issueId": 84,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/84"
+}
