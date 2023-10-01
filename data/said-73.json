@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "said",
+  "risk": "2",
+  "title": "Malicious user can delay accrued reward inside `PrimeLiquidityProvider`",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/73"
+}
