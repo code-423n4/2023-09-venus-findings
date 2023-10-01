@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "Updating the alpha parameter affects user interest accrual, so it should accrue interest for all markets before changing alpha.",
+  "issueId": 61,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/61"
+}
