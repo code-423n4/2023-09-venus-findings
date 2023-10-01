@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The distribution weighted by a user's supply/borrow balance assumes they are in the same units. But supply is tracked exchange-rate adjusted while borrow is not. ",
+  "issueId": 55,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/55"
+}
