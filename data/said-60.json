@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "said",
+  "risk": "2",
+  "title": "`updateScores` can be broken when new Prime holder call the function",
+  "issueId": 60,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/60"
+}
