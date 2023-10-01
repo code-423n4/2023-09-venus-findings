@@ -298,7 +298,7 @@ https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Pri
 
 ## 6. Function with `onlyOwner()` modifier can be marked as payabale :-
 
-It will save gas 21 per call because by marking payable it will prevent the extra OPT code `(CALLVALUE(2),DUP1(3),ISZERO(3),PUSH2(3),JUMPI(10),PUSH1(3),DUP1(3),REVERT(0),JUMPDEST(1),POP(2))`
+It will save gas 21 per call because by marking payable it will prevent the extra OP code `(CALLVALUE(2),DUP1(3),ISZERO(3),PUSH2(3),JUMPI(10),PUSH1(3),DUP1(3),REVERT(0),JUMPDEST(1),POP(2))`
 
 **Before**
 ```solidity
