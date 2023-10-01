@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "debo",
+  "risk": "2",
+  "title": "[M-03]  In the PrimeLiquidityProvider contract the Initialize function does not check if the token addresses provided are valid ERC20 token addresses",
+  "issueId": 50,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/50"
+}
