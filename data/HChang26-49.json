@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "HChang26",
+  "risk": "3",
+  "title": "`accrueTokens()` mishandles `lastAccruedBlock` in PrimeLiquidityProvider",
+  "issueId": 49,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/49"
+}
