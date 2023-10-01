@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xTheC0der",
+  "risk": "3",
+  "title": "`Prime` contract incompatible with currently deployed / active markets (`vToken`) with 8 decimals",
+  "issueId": 85,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/85"
+}
