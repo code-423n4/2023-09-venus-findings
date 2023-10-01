@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "balanceOf of reward Tokens is meant to be strictly larger than accrued to in PrimeLiquidityProvider, however the owner has the ability to sweep reward tokens which could revert the accrue function",
+  "issueId": 42,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/42"
+}
