@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Hama",
+  "risk": "3",
+  "title": " Denial of Service (DoS) Vulnerability Due to Gas Exhaustion",
+  "issueId": 65,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/65"
+}
