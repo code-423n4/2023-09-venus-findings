@@ -26,6 +26,8 @@ In below function we can see `pendingInterests` variable is declared in returns 
         return pendingInterests;//@audit
     }
 ```
+Look into `//@audit` comment in above function
+
 
 **After**
 
@@ -52,6 +54,9 @@ In below function we can see `pendingInterests` variable is declared in returns 
         //return pendingInterests;//@audit changed here
     }
 ```
+
+Please look into `//@audit changed here` in above function.
+
 code snippet:-
 https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L174C4-L194C6
 
@@ -159,6 +164,7 @@ Each iteration will 5 gas.
         }
 
 ```
+Look into `//@audit` comment in above function
 
 **After :-**
 ```solidity
@@ -301,3 +307,69 @@ function initializeTokens(address[] calldata tokens_) external onlyOwner { //@au
 function setPrimeToken(address prime_) external onlyOwner {//@audit
 
 function sweepToken(IERC20Upgradeable token_, address to_, uint256 amount_) external onlyOwner { //@audit
+```
+please look into `//@audit` in above function.
+
+**After**
+```solidity
+function initializeTokens(address[] calldata tokens_) external payable onlyOwner { //@audit changed here
+
+function setPrimeToken(address prime_) external payable onlyOwner {//@audit changed here
+
+function sweepToken(IERC20Upgradeable token_, address to_, uint256 amount_) external payable onlyOwner { //@audit changed here
+
+```
+Please look into `//@audit changed here` in above function
+
+code snippet:-
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L177
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L216
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L118
+
+
+## 7 . In order to save some deployment gas we can check address(0) in if-else only .
+
+The check of address(0) can be done in if-else instead of internal function. Compare to if-else , internal function consumes less gas(4-5) while on calling to check `address(0)` in external or public function. But while deployment of contract internal function(zero-check) consumes more gas(1000 - 1200 and more) than presented if-else statements . In below contract i deployed contract with remix below table :-
+
+| Particulars | With Internal Function | Without Internal Function |
+| :---         |     :---:      |          ---: |
+| Gas          | 2,55,027     | 2,51,839    |
+| Transaction cost| 2,21,814       | 2,19,045    |
+| Execution Cost | 1,54,602 | 1,54,602 |
+
+In below scenario [_ensureZeroAddress](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L344C1-L348C6) function in PrimeLiquidateProvide.sol and called in line [178](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L178),[250](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L250) and [287](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L287) in-order to save deployemnt we can directly use if-elsse statement .
+
+**Before :-**
+```solidity
+    function setPrimeToken(address prime_) external onlyOwner {
+        _ensureZeroAddress(prime_);//@audit
+
+    function accrueTokens(address token_) public {
+        _ensureZeroAddress(token_);//@audit
+
+    function _initializeToken(address token_) internal {
+        _ensureZeroAddress(token_);//@audit
+ 
+```
+Please see the `//@audit` comment in above function
+
+
+**After :-**
+```solidity
+function setPrimeToken(address prime_) external onlyOwner {
+       if(prime == address(0)) revert("Error");//@audit changed here
+
+function accrueTokens(address token_) public {
+       if(token == address(0)) revert("Error");//@audit changed here
+
+function _initializeToken(address token_) internal {
+         if(token == address(0)) revert("Error");//@audit changed here
+
+```
+Please look into `//@audit changed here` in above function
+
+code snippet:-
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L287
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L250
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L178
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L344
