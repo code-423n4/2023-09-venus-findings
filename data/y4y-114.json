@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "y4y",
+  "risk": "2",
+  "title": "Client may get less reward when distribution speed is not set properly.",
+  "issueId": 114,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/114"
+}
