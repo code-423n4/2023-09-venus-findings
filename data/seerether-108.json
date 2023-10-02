@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The _incomePerBlock() calculation making assumptions about borrowRatePerBlock and reserveFactorMantissa not changing between accruals could lead to inaccurate income per block calculations.",
+  "issueId": 108,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/108"
+}
