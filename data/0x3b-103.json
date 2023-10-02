@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0x3b",
+  "risk": "2",
+  "title": "M there is a difference in capital calculations  between `estimateAPR` and `_calculateScore`",
+  "issueId": 103,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/103"
+}
