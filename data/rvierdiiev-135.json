@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "PrimeLiquidityProvider.sweepToken allows to sweep already accrued balance",
+  "issueId": 135,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/135"
+}
