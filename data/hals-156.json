@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "hals",
+  "risk": "2",
+  "title": "Prime token holder can front-run governance and claim rewards before burning his prime token",
+  "issueId": 156,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/156"
+}
