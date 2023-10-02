@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "SUPERMAN_I4G",
+  "risk": "2",
+  "title": "PendingInterest[] memory pendingInterests [Line 176] shadows an existing declaration in the function getPendingInterests.",
+  "issueId": 168,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/168"
+}
