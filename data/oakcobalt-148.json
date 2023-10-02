@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "Malicious users can force capped users to lose on rewards and gain unfairly from victim's loss",
+  "issueId": 148,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/148"
+}
