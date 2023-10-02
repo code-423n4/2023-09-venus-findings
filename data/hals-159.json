@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "hals",
+  "risk": "2",
+  "title": "Missing check on the returned underlying price will adversly affect user score",
+  "issueId": 159,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/159"
+}
