@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "hals",
+  "risk": "2",
+  "title": "`Prime` contract can be disabled because of a vulnerable subtraction in the `PrimeLiquidityProvider.accrueTokens`",
+  "issueId": 155,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/155"
+}
