@@ -1,7 +1,8 @@
 | *Issue* | *Description*                                                                                                                                                            |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [G-01]  | In [updateScores](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L200-L230) you don't need to accrue every market for every user |
-| [G-02]  | No need to save [totalIncomePerBlockFromMarket](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L971)                             |
+| [G-02]  | No need to save [totalIncomePerBlockFromMarket](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L971) |
+| [G-03]  | Use `block.number` instead of a function |
 
 ### [G-01] In [updateScores](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L200-L230) you don't need to accrue every market for every user
 In [updateScores](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L200-L230) the internal [_executeBoost](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L779-L787) is called where for every user every market is accrued. However this is not necessary since every market needs to be accrued once. This will save a lot of gas since for a transaction with 20 users, all markets are gonna be accrued 20 times, while only 1 accrue is needed per market. 
@@ -27,3 +28,6 @@ Under [_incomeDistributionYearly](https://github.com/code-423n4/2023-09-venus/bl
 
 +       uint256 incomePerBlockForDistributionFromMarket = (_incomePerBlock(vToken) * _distributionPercentage()) / IProtocolShareReserve(protocolShareReserve).MAX_PERCENT(); 
 ```
+
+### [G-03] Use `block.number` instead of a function
+Under [_initializeToken](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L286-L301) there is no need to call [getBlockNumber](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L288) as just the EVM call will cost less gas. 
