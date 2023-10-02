@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "tapir",
+  "risk": "2",
+  "title": "\"issue\" function does not check if a user has an ongoing staked process which if issued tokens are irrevocable ",
+  "issueId": 144,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/144"
+}
