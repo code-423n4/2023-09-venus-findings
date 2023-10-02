@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "mahdirostami",
+  "risk": "3",
+  "title": "Exploiting the time gap between changing Multipliers and executing the \"updateScores\" function allows users prevent other users to gain rewards",
+  "issueId": 138,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/138"
+}
