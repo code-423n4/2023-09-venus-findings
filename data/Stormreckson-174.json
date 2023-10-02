@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "Array length and token existence checks are missing in `issue` function of Prime contract this can lead to complications.",
+  "issueId": 174,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/174"
+}
