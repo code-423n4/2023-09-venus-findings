@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "nobody2018",
+  "risk": "2",
+  "title": "Prime.accrueInterest will cause distributionIncome not to be accumulated into markets[vToken].rewardIndex in special case",
+  "issueId": 121,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/121"
+}
