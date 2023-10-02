@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "Users can call Claim() before stake time is elapsed due to wrong stake time eligibility check ",
+  "issueId": 173,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/173"
+}
