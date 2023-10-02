@@ -329,15 +329,15 @@ https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Pri
 
 ## 7 . In order to save some deployment gas we can check address(0) in if-else only .
 
-The check of address(0) can be done in if-else instead of internal function. Compare to if-else , internal function consumes less gas(4-5) while on calling to check `address(0)` in external or public function. But while deployment of contract internal function(zero-check) consumes more gas(1000 - 1200 and more) than presented if-else statements . In below contract i deployed contract with remix below table :-
+The check of address(0) can be done in if-else instead of internal function. Compare to if-else , internal function consumes less gas(4-5) while on calling to check `address(0)` in external or public function. But while deployment of contract internal function(zero-check) consumes more gas(1000 - 1200 and more) than presented if-else statements . In below contract i deployed functions with Internal function check and without internal function check instead of added if-else statements to check with **remix IDE**  below table shows the Gas numbers. :-
 
-| Particulars | With Internal Function | Without Internal Function |
+| Particulars | With Internal Function  | Without Internal Function |
 | :---         |     :---:      |          ---: |
 | Gas          | 2,55,027     | 2,51,839    |
 | Transaction cost| 2,21,814       | 2,19,045    |
-| Execution Cost | 1,54,602 | 1,54,602 |
+| Execution Cost | 1,57,202 | 1,54,602 |
 
-In below scenario [_ensureZeroAddress](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L344C1-L348C6) function in PrimeLiquidateProvide.sol and called in line [178](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L178),[250](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L250) and [287](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L287) in-order to save deployemnt we can directly use if-elsse statement .
+In below scenario [_ensureZeroAddress](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L344C1-L348C6) function in PrimeLiquidateProvide.sol and called in line [178](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L178),[250](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L250) and [287](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L287) in-order to save deployemnt we can directly use if-else statement .
 
 **Before :-**
 ```solidity
