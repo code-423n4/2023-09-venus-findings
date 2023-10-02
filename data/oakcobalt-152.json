@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "Prime.sol will not fully support vBNB due to unwrapped  implementation in `getPendingInterests()`",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/152"
+}
