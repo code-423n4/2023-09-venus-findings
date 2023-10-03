@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Satyam_Sharma",
+  "risk": "3",
+  "title": "xvsUpdated can be called without ensuring if the token is irrevocable or not",
+  "issueId": 189,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/189"
+}
