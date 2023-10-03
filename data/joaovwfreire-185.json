@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "joaovwfreire",
+  "risk": "2",
+  "title": "The Prime Contract utilizes a BLOCKS_PER_YEAR constant that leads to imprecise APR calculations",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/185"
+}
