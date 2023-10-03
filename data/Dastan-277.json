@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Dastan",
+  "risk": "3",
+  "title": "Borrowers can manipulate the APRs by borrowing a large amount and then supplying an even larger amount",
+  "issueId": 277,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/277"
+}
