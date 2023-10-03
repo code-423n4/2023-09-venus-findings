@@ -198,6 +198,8 @@ Suppose a user's market balance changed to BalanceB from BalanceA at 10000 block
 (https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L920)
 As seen from the flow above, the old user score stored in `interests[vToken][user]` will be used to calculate accrual. In the scenario above, the old score is only based on MultiplierA. And the rewardIndex will be a time period spanning two different Multipliers, making the score accrual inaccurate, unfair for other users.
 
+Similarly, if `multiplier` and `alpha` are updated within one accrual, score will not be calculated correctly.
+
 Uneven score distribution will always occur in such scenarios. I consider this low severity due to the fact that `multiplier` or `alpha` updates are protocol global decisions that can be announced to allow users to update their balance before `multiplier` and `alpha` change, and sync their scores after global updates before making further balance change.
 
 Recommendations:
