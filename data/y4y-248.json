@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "y4y",
+  "risk": "3",
+  "title": "User token may be burnt if is issued directly after staked some XVS tokens.",
+  "issueId": 248,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/248"
+}
