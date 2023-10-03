@@ -53,6 +53,7 @@ The impact of this gas limit challenge is that transactions invoking the getPend
 To mitigate the gas limit challenge when processing large arrays, consider implementing batch processing. 
 ## C. Stale Price Risk in Asset Valuation:
 [Link](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L647-L664)
+[LinkB](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L884)
 The vulnerable code section is within the `_calculateScore` function, specifically when updating the asset price of `xvsToken` using the `oracle.updateAssetPrice(xvsToken)` function. Here's the relevant code snippet:
 ```solidity
 address xvsToken = IXVSVault(xvsVault).xvsAddress();
