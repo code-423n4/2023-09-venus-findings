@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xpiken",
+  "risk": "2",
+  "title": "User could claim revocable token even they didn't have enough staked XVS tokens",
+  "issueId": 211,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/211"
+}
