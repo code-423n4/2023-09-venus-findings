@@ -87,6 +87,8 @@ This technical analysis report examines the security aspects of Venus Prime, a v
 
 * There is a risk of encountering an infinite loop within the `updateScores` function.
 
+* There is a decimal precision error which is leading to incorrect calculation of Score.
+
 * The value of `BLOCKS_PER_YEAR` may be unpredictable during deployment, particularly on blockchain networks with inconsistent block times.
 
 * Tokens that have fees associated with them may lead to exaggerated interest claims for some users, potentially causing issues for the remaining users.
@@ -103,6 +105,8 @@ This technical analysis report examines the security aspects of Venus Prime, a v
 
 | Total Number of Hours | 16 |
 |:--:|:--:|
+
+
 
 
 ### Time spent:
