@@ -3,6 +3,9 @@
 * Low 2: `BLOCKS_PER_YEAR` is immuatble
 * Low 3: `MAX_DISTRIBUTION_SPEED` is only intended for underlying assets with 18 decimals
 * Low 4: Use of outdated OpenZeppelin library version
+* Low 5: Method `xvsUpdated(...)` is callabe by anyone
+* Low 6: Method `accrueInterestAndUpdateScore(...)` is callabe by anyone
+* Low 7: Missing check for stalling oracle in score computation
 * Non-critical 1: Missing method `removeMarket(...)`
 * Non-critical 2: No support for markets (`vToken`) with more than 18 decimals
 * Non-critical 3: Hypothetical underflow
@@ -34,6 +37,15 @@ The [PrimeLiquidityProvider.MAX_DISTRIBUTION_SPEED](https://github.com/code-423n
 
 ## Low 4: Use of outdated OpenZeppelin library version
 According to [package.json](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/package.json#L34-L35), `openzeppelin-contracts v4.8.3` and `openzeppelin-contracts-upgradeable v4.8.0` is used. Both versions are outdated and have known vulnerabilities, see [Snyk Vulnerability Database](https://security.snyk.io/package/npm/@openzeppelin%2Fcontracts).
+
+## Low 5: Method `xvsUpdated(...)` is callabe by anyone
+The method [Prime.xvsUpdated(...)](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L361-L382) is callable by anyone although only meant to be invoked by the [XVSVault](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/XVSVault/XVSVault.sol) contract.
+
+## Low 6: Method `accrueInterestAndUpdateScore(...)` is callabe by anyone
+The method [Prime.accrueInterestAndUpdateScore(...)](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L384-L392) is callable by anyone although only meant to be invoked by the [PolicyFacet](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Comptroller/Diamond/facets/PolicyFacet.sol) contract.
+
+## Low 7: Missing check for stalling oracle in score computation
+The oracle calls in [L657-658](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L657-L658) of [Prime._calculateScore(...)](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L641-L664) do not perform any kind of check to revert on stalling oracle prices.
 
 ## Non-critical 1: Missing method `removeMarket(...)`
 There is a method [Prime.addMarket(...)](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L282-L309). However, it might be required in some occasions to remove a market (`vToken`) from `Prime`.
