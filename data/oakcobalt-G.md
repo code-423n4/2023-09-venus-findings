@@ -25,6 +25,7 @@ Under current implementation, the market for-loop contains `_executeBoost()` and
             }
 ...
 ```
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L213)
 ```solidity
 //Prime.sol
     function _executeBoost(address user, address vToken) internal {
@@ -35,6 +36,7 @@ Under current implementation, the market for-loop contains `_executeBoost()` and
         interests[vToken][user].accrued += _interestAccrued(vToken, user);
         interests[vToken][user].rewardIndex = markets[vToken].rewardIndex;
 ```
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L784)
 As seen from above, `accureInterest(vToken)` is nested in (2) for-loops and executed once per each user and each market. This is quite wasteful.
 
 Recommendations:
@@ -74,6 +76,7 @@ In `_startScoreUpdateRound()`, any time a new round begins, both `pendingScoreUp
 |>      pendingScoreUpdates = totalScoreUpdatesRequired;
     }
 ```
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L818-L821)
 When `totalScoreUpdatesRequired` hasn't changed, storage writing twice is a waste of gas. 
 
 Recommendations:
@@ -89,6 +92,7 @@ In Prime.sol - `initialize()`, state variable `nextScoreUpdateRoundId` will be r
 |>      nextScoreUpdateRoundId = 0;
 ...
 ```
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L156)
 ```solidity
 //PrimeStorage.sol
     /// @notice unique id for next round
@@ -119,6 +123,7 @@ The above math operation plus storage operation are wasteful if (1)`accrueIntere
 |>      unreleasedPLPIncome[underlying] = totalAccruedInPLP;
 ...
 ```
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L554)
 ```solidity
 //PrimeLiquiityProvider.sol
     function accrueTokens(address token_) public {
@@ -128,9 +133,8 @@ The above math operation plus storage operation are wasteful if (1)`accrueIntere
         //@audit-info `accrueTokens` will not update when called again in the same block.
         if (deltaBlocks > 0) {
 ...
-
 ```
-
+(https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L257)
 In addition, `accrueInteret()` is one of the most frequently called functions in many user flows in Prime.sol. For example, it is nested under `_executeBoost()` and most importantly the most gas-intensive function `updateScores()`. This significantly increases the total gas wasted by any function that nests `accrueInterest()` in a for-loop.
 
 Recommendations:
