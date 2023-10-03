@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Mike_Bello90",
+  "risk": "2",
+  "title": "Vulnerability: A Malicious User can Burn any revocable token issue to any user / Contract: Prime.sol / Function: xvsUpdated",
+  "issueId": 279,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/279"
+}
