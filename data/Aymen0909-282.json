@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Aymen0909",
+  "risk": "2",
+  "title": "`_initializeMarkets` will be blocked if a market underlying tokenprice is unavailable ",
+  "issueId": 282,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/282"
+}
