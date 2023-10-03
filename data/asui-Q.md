@@ -1,0 +1,1 @@
+1. Instead of letting the caller pass any address as user and any market in the ```accrueInterestAndUpdateScore``` function in the **Prime.sol** contract take the ```msg.sender``` as user and only the market address as the argument so that no one can act on behalf of anyone .
