@@ -76,18 +76,9 @@ See details on (1) and (2) in my HM and GAS submissions. Briefly, `updateScores(
 Even if the vulnerability in (1) & (2) are fixed. The protocol is still dealing with (3) which means the protocol will always have to pay for a lot of gas to sync every user score update to date, which will be an increasingly difficult process as the Prime.sol gains more traction. In addition, the uneven and incorrect score distribution will still exist for some period of time.
 
 Recommendations:
-Apart from the fixes proposed in (1) & (2), one may argue it may be worthwhile to consider updating the score accounting structure to account for user score updated round or timestamp, this also relates to Case 4.
+Apart from the fixes proposed in (1) & (2), one may argue it may be worthwhile to consider updating the score accounting structure to account for user score updated round or timestamp
 
-- **Case 4: When multiple factors changed between an accrual.**
-
-This is mostly incorrectly handled based on the current implementation. 
-
-Suppose a user's market balance changed to BalanceB from BalanceA at 10000 blocks after a market multiplier updates to MultiplierB from MultiplierA. Since the last user score update is before the multiplier update with BalanceA, when the user's reward accrued at 10000 blocks, their old score will be used for a time period that spans both MultiplierB and MultiplierA. However, only MultiplierA will be used to calculate user rewards and this is incorrect and unfair to another user who has the same balance change and same time interval but accrued their rewards at 15000 blocks.
-
-There could be many cases like the above where scores will be incorrect and unfair due to multiple factor changes in one accrual.
-
-Recommendations:
-As mentioned in Case 3, an updated score accounting structure that includes a `round` or `timestamp` can be considered. This means that (1) each time a user score is updated a timestamp or block number will be recorded. (2) Rewards accumulation over any given period of time is linear such that total rewards can be scaled over different lengths of time. 
+This means that (1) each time a user score is updated a timestamp or block number will be recorded. (2) Rewards accumulation over any given period of time is linear such that total rewards can be scaled over different lengths of time. 
 
 Because of the new state write, this for sure will increase individual gas costs for single-user score updates, but the goal is to eliminate protocol mass score updates which are intensive and increasingly challenging over time. In addition, (2) will only be required when an accrual spans over two rounds which is not a frequent occurrence, and again the extra gas cost will be shared among users, not the protocol which is more manageable for everyone.
 
@@ -104,6 +95,8 @@ Because of the new state write, this for sure will increase individual gas costs
 
 
  
+
+
 
 
 
