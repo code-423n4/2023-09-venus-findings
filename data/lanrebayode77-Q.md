@@ -1,6 +1,22 @@
 ## QA REPORT
 
-### 1. Possible Incorrect BlocksPerYear
+### 2. Incorrect natspec comment
+Before passing user xvs balance to obtain supply and borrow, it was checked that the XVS balance does not exceed the capped value with an internal function ```_xvsBalanceForScore(xvsStaked)```
+``` solidity
+ uint256 xvsBalanceForScore = _xvsBalanceForScore(xvsStaked);
+```
+https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L536-L537
+But inside the ```_capitalForScore```, the natspec comment states that xvs passed is the 'actual' balance of user.
+https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L864
+``` solidity
+     * @param xvs the actual XVS balance of user
+```
+It should be corrected to a more clearer comment as the current detail is conflicts what was actually done. A more appropriate comment should be: 
+``` solidity
+     * @param xvs the capped XVS balance of user
+```
+
+### 2. Possible Incorrect BlocksPerYear
 https://github.com/code-423n4/2023-09-venus/blob/edc2212c77c8a419bd49a05ec1e2556405095922/contracts/Tokens/Prime/Prime.sol#L109
 ``` solidity
  BLOCKS_PER_YEAR = _blocksPerYear;
