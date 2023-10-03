@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "joaovwfreire",
+  "risk": "2",
+  "title": "_claimInterest internal function at Prime contract doesn't ensure funds released from external sources are enough to cover the amount required",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/183"
+}
