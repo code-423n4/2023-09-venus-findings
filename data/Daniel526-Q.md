@@ -51,3 +51,15 @@ The function loops through the `_allMarkets` array to calculate pending interest
 The impact of this gas limit challenge is that transactions invoking the getPendingInterests function may fail when processing a large number of markets. Users will not receive the expected results, and the contract's functionality may be limited when dealing with extensive data sets.
 ## Mitigation: 
 To mitigate the gas limit challenge when processing large arrays, consider implementing batch processing. 
+## C. Stale Price Risk in Asset Valuation:
+[Link](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L647-L664)
+The vulnerable code section is within the `_calculateScore` function, specifically when updating the asset price of `xvsToken` using the `oracle.updateAssetPrice(xvsToken)` function. Here's the relevant code snippet:
+```solidity
+address xvsToken = IXVSVault(xvsVault).xvsAddress();
+oracle.updateAssetPrice(xvsToken);
+```
+The purpose of this code is to obtain the current asset price of `xvsToken` from an external oracle. However, the vulnerability lies in the fact that the obtained price may not be up-to-date, leading to inaccurate calculations of the user's score. This issue could occur due to delays in the oracle's data source or infrequent updates.
+## Impact:
+The impact of using stale prices in asset valuation is that the user's score, which relies on these prices, may not accurately reflect the current market conditions. This could lead to incorrect risk assessments and financial decisions within the decentralized application.
+## Mitigation:
+Instead of relying on a single price update, implement price averaging by considering the average of the last N price updates over a specific time period. This approach helps smooth out price fluctuations and reduces the impact of a single stale price on calculations.
