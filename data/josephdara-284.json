@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "josephdara",
+  "risk": "2",
+  "title": "MAX_DISTRIBUTION_SPEED ineffective with tokens with less decimals",
+  "issueId": 284,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/284"
+}
