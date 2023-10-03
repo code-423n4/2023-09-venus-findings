@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Daniel526",
+  "risk": "3",
+  "title": "Contract Owner can steal User funds by setting the _to address as their own address",
+  "issueId": 202,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/202"
+}
