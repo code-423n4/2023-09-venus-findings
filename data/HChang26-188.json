@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "HChang26",
+  "risk": "3",
+  "title": "`addMarket()` can potentially lead to unfair reward distribution",
+  "issueId": 188,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/188"
+}
