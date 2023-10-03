@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "claim() does not verify amout of XVS",
+  "issueId": 287,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/287"
+}
