@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ArmedGoose",
+  "risk": "2",
+  "title": "`addMarket()` does not check if market token is initialized in `PLP`, which may cause multiple reverts among the protocol until initialization is done",
+  "issueId": 240,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/240"
+}
