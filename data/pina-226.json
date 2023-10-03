@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "pina",
+  "risk": "2",
+  "title": "A user can obtain a revocable Token even if they have never staked any XVS",
+  "issueId": 226,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/226"
+}
