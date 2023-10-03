@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "pina",
+  "risk": "2",
+  "title": "`updateScores` can fall into an infinite loop",
+  "issueId": 274,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/274"
+}
