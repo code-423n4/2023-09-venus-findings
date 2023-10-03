@@ -200,7 +200,7 @@ Look into `//@audit` comment in above function
 ```solidity
     function getPendingInterests(address user) external returns (PendingInterest[] memory pendingInterests) {//@audit changed here
         address[] storage _allMarkets = allMarkets;
-         pendingInterests = new PendingInterest[](_allMarkets.length);//@audit changed here
+         pendingInterests = new PendingInterest[]//@audit changed here(_allMarkets.length);//@audit changed here
 
         for (uint256 i = 0; i < _allMarkets.length; ) {
             address market = _allMarkets[i];
@@ -217,11 +217,22 @@ Look into `//@audit` comment in above function
             }
         }
 
-        //return pendingInterests;//@audit changed here
+        //return pendingInterests;//@audit changed here delete this
     }
 ```
 
 Please look into `//@audit changed here` in above function.
+
+**HardHat Gas BenchMark**
+
+Before 
+prime.sol - `5,133,847`
+
+After 
+prime.sol - `5,131,483`
+
+5,133,847 - 5,131,483 = `2364`
+This is exact saved deployment gas .
 
 code snippet:-
 https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L174C4-L194C6
@@ -275,6 +286,17 @@ https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Pri
 https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L118
 
 ## 5. Named the returns of internal function to save some deployment gas :-
+
+**HardHat Gas BenchMark**
+
+Before :-
+prime.sol - 5,131,483
+
+After .sol - 5,130,200
+
+`5,131,483 - 5,130,200 = 1,283`
+
+This is exact deployment gas saved .
 
 **Before**
 ```solidity
@@ -341,8 +363,30 @@ Please look into `//@audit changed here` comment in above function
 code snippet:-
 https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L672C5-L697C6
 
+## 6 .Use ternary operation to save deployment gas . 
 
-## 6 .Use do-while loop for simple operation .
+
+**Before**
+```solidity
+if (totalTimeStaked < STAKING_PERIOD) {
+            return STAKING_PERIOD - totalTimeStaked;
+        } else {
+            return 0;
+        }
+
+```
+**After**
+```solidity
+
+ return (totalTimeStaked < STAKING_PERIOD) ? (STAKING_PERIOD - totalTimeStaked) : 0 ; //cleared 
+
+```
+
+code snippet :-
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L482C9-L486C10
+
+
+## 7 .Use do-while loop for simple operation .
 
 Each iteration will 5 gas.
 
