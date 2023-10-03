@@ -23,7 +23,28 @@ nextScoreUpdateRoundId = 0;
 ```
 In solidity unit variables are set to zero by default, the line does not make any changes. 
 
-### 3. Possible Incorrect BlocksPerYear
+### 3. No zero check
+No zero check modifier like in other functions
+https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L216
+The internal function that does zero checks should be included.
+``` solidity
+  function sweepToken(IERC20Upgradeable token_, address to_, uint256 amount_) external onlyOwner {
+        _ensureZeroAddress(token_);
+        _ensureZeroAddress(to_);
+        uint256 balance = token_.balanceOf(address(this));
+        if (amount_ > balance) {
+            revert InsufficientBalance(amount_, balance);
+        }
+
+        emit SweepToken(address(token_), to_, amount_);
+
+        token_.safeTransfer(to_, amount_);
+    }
+
+```
+
+
+### 4. Possible Incorrect BlocksPerYear
 https://github.com/code-423n4/2023-09-venus/blob/edc2212c77c8a419bd49a05ec1e2556405095922/contracts/Tokens/Prime/Prime.sol#L109
 ``` solidity
  BLOCKS_PER_YEAR = _blocksPerYear;
