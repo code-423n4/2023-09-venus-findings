@@ -28,3 +28,14 @@ The tokens are "issued" in either case independent of whether it is an irrevocab
 ## L-04 Inconsistent pattern used for resetting stakedAt to 0 in Prime.sol
 In Prime.sol the stakedAt of a user is reset to 0 in more than 1 place. But different patterns are used to reset the value to 0. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L352 the value is deleted. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L376 the value is assign 0. One of both patterns should be used exclusively to reach consistency.
 
+## L-05 Renaming variables and slight restructuring would give accrueInterest(address vToken) function in Prime.sol more clarity
+The "distributionIncome" variable (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L568) should better be renamed to sth. like "unreleasedIncome" or "unreleasedPrimeIncome". The following would give the function more clarity (at the expense of 1 additional local variable:
+```Solidity
+uint256 unreleasedPSRIncome = totalIncomeUnreleased - unreleasedPSRIncome[underlying];
+...
+uint256 totalAccruedInPLP = _primeLiquidityProvider.tokenAmountAccrued(underlying);
+uint256 unreleasedPLPAccruedInterest = totalAccruedInPLP - unreleasedPLPIncome[underlying];
+
+uint256 unreleasedIncome = unreleasedPSRIncome + totalAccruedInPLP;
+```
+
