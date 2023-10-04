@@ -17,3 +17,7 @@ Steps to reproduce:
 `tokens_ Array of addresses of the tokens to be intialized` -> `initialized` 
 `mapping of asset adress => amount` -> `address`
 
+#[L-03] Check address is zero when calling `sweepToken`
+
+`emit SweepToken(address(token_), to_, amount_);` -- please, add `require(to != address(0))` before, to prevent accidental transferring to zero address.
+
