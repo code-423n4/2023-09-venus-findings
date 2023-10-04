@@ -11,7 +11,7 @@
 | [G-06] | Don’t cache value if it is only used once                                                    |     2     |
 | [G-07] | No need to emit state variable                           |     1     |
 | [G-08] | Write for loops in more gas efficient way |    9     |
-| [G-09] | Avoid copying same storage pointer pointing same array                               |     5     |
+| [G-09] | Avoid copying same storage pointer pointing to same array                               |     5     |
 | [G-10] | Use += / -= for mappings             |    4     |
 | [G-11] | Using `ternary` operator instead of single line if-else saves gas             |    7     |
 | [G-12] | OR in `if-`condition can be rewritten to two single `if` conditions             |    5     |
