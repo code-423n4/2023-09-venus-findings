@@ -73,6 +73,26 @@ Actual implementation:
 ### Recommended Mitigation Steps
 The code/docs should match.
 
+## [L-03] Hooks should have access control
+### Impact
+The hooks `Prime.xvsUpdated()` and `Prime.accrueInterestAndUpdateScore()` only need to be called by the XVSVault and lending pools, respectively. They lack access control, which needlessly increases attack surface area.
+### Recommended Mitigation Steps
+Add access control to the aforementioned hooks.
+
+## [L-04] Anyone can call Prime.claimInterest() to send a user's accrued tokens to the user
+### Impact
+Allowing anyone to send accrued Prime rewards on the behalf of any user needlessly increases attack surface area.
+### Recommended Mitigation Steps
+```diff
+    function claimInterest(address vToken) external whenNotPaused returns (uint256) {
+        return _claimInterest(vToken, msg.sender);
+    }
+
+-   function claimInterest(address vToken, address user) external whenNotPaused returns (uint256) {
+-       return _claimInterest(vToken, user);
+-   }
+```
+
 ## [NC-01] Potential oracle manipulation attack; inflate user score
 ### Impact
 A user could inflate their score and accrue an unfairly large amount of rewards at the expense of other users.
