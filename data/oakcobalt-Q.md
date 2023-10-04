@@ -73,7 +73,7 @@ Recommendations:
 Add a remove market method to allow a single market being removed from the for-loop without impacting the whole contract.
 
 ### Low 03: Unnecessary code in Prime.sol `initialize()`
-`nextScoreUpdateRoundId` is declared as a state variable. In `initialize()`, it is assign as '0' value which is a redundant state update.
+`nextScoreUpdateRoundId` is declared as a state variable. In `initialize()`, it is assign as '0' value which is a redundant state update. Note that the winning bot report didn't include this instance in their [report](https://github.com/code-423n4/2023-09-venus/blob/main/bot-report.md#n21-variables-need-not-be-initialized-to-zero).
 ```solidity
 //Prime.sol
     function initialize(
