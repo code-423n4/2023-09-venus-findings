@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "deth",
+  "risk": "3",
+  "title": "Prime.sol - User can claim Prime token without having any staked XVS, because his `stakedAt` isn't reset whenever he is issued an irrevocable token.",
+  "issueId": 633,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/633"
+}
