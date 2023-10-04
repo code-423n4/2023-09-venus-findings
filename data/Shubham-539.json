@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Shubham",
+  "risk": "2",
+  "title": "If many users are eligible for a prime token on the same day, users claiming later would not be able to benefit compared to other users",
+  "issueId": 539,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/539"
+}
