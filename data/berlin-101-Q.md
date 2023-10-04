@@ -52,4 +52,11 @@ It feels like the naming is grammatically wrong. The variable should be renamed 
 ## L-08 _executeBoost has wrong comment indicating it needs to be called "before changing account's borrow or supply balance."
 The comment (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L775) should be "Update total score of user and market. Must be called after changing account's borrow or supply balance." like commented for the _updateScore function (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L790).
 
+## L-09 TokenDistributionSpeedUpdated event in PrimeLiquidityProvider.sol could also log the old distribution speed
+The PrimeLiquidityProvider event only logs the new speed (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L33) whereas the PrimeTokenUpdated event also logs the old prime token when logging the new prime token (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L36). Logging the old and the new value for all "*Updated" events could be a pattern worth following throughout the codebase.
+
+## L-10 TokenNotInitialized event in PrimeLiquidityProvider.sol uses parameter with trailing underscore
+TokenNotInitialized uses the "token_" parameter with trailing underscore (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L75). Other events use the "token" parameter without underscore (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L66). The underscore should be removed.
+
+
 
