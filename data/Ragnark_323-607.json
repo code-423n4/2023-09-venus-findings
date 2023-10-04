@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Ragnark_323",
+  "risk": "3",
+  "title": "anyone with valid token address can create DOS for accrueInterest() in prime.sol",
+  "issueId": 607,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/607"
+}
