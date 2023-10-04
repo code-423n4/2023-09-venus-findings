@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "dirk_y",
+  "risk": "2",
+  "title": "Users can prevent proper score updates after alpha/multiplier changes",
+  "issueId": 295,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/295"
+}
