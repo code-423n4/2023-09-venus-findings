@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "KrisApostolov",
+  "risk": "2",
+  "title": "Users minted and revoked an irrevocable token can claim a revocable token below the minimum staked amount",
+  "issueId": 439,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/439"
+}
