@@ -76,7 +76,7 @@ See details on (1) and (2) in my HM and GAS submissions. Briefly, `updateScores(
 Even if the vulnerability in (1) & (2) are fixed. The protocol is still dealing with (3) which means the protocol will always have to pay for a lot of gas to sync every user score update to date, which will be an increasingly difficult process as the Prime.sol gains more traction. In addition, the uneven and incorrect score distribution will still exist for some period of time.
 
 Recommendations:
-Apart from the fixes proposed in (1) & (2), (3) is much harder to completely resolved without rewriting the logic of score calculation. If it's possible, may consider separate `multiplier` and `alpha` as a global scaler instead of having it baked into individual score calculations, such that as long as all user balances are up to date (which is already taken care of in balance change flow) total score can be deduced from sum of balance. 
+Apart from the fixes proposed in (1) & (2), (3) is much harder to completely resolved without rewriting the logic of score calculation. If it's possible, may consider separate `multiplier` and `alpha` as a global scaler instead of having it baked into individual score calculations, such that as long as all user balances are up to date (which is already taken care of in balance change flow) total score can be deduced from sum of balance. But the trade-off would be user score will not maintain a geometric weighted mean relationship as currently implemented in `calculateScore()` that allows concave control.
 
 
 
@@ -91,6 +91,8 @@ Apart from the fixes proposed in (1) & (2), (3) is much harder to completely res
 
 
  
+
+
 
 
 
