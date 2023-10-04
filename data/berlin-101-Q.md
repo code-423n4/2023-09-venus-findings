@@ -45,3 +45,11 @@ uint256 unreleasedPLPAccruedInterest = totalAccruedInPLP - unreleasedPLPIncome[u
 
 uint256 unreleasedIncome = unreleasedPSRIncome + totalAccruedInPLP;
 ```
+
+## L-07 local isMarketExist variable inside of addMarket() function of Prime.sol should be renamed
+It feels like the naming is grammatically wrong. The variable should be renamed to sth. like "isMarketExisting", "doesMarketExist", "marketExisting", "marketExists" here https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L292.
+
+## L-08 _executeBoost has wrong comment indicating it needs to be called "before changing account's borrow or supply balance."
+The comment (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L775) should be "Update total score of user and market. Must be called after changing account's borrow or supply balance." like commented for the _updateScore function (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L790).
+
+
