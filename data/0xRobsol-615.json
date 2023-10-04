@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xRobsol",
+  "risk": "2",
+  "title": "Potential Gas Limit Issue with Bulk Score Updates",
+  "issueId": 615,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/615"
+}
