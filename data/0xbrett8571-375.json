@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "`sweepToken()` lacks balance check, risking oversweeping and potential contract disruption.",
+  "issueId": 375,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/375"
+}
