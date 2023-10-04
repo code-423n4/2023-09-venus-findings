@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xDetermination",
+  "risk": "3",
+  "title": "A malicious user can avoid unfavorable score updates after alpha/multiplier changes, resulting in accrual of outsized rewards for the attacker at the expense of other users",
+  "issueId": 555,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/555"
+}
