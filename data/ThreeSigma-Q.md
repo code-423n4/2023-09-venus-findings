@@ -4,10 +4,7 @@
 [L - 1] `Prime` - Round id is only considered on [`updateScores()`](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L200), not in other functions.
 The function `updateScores()` checks the variables `pendingScoreUpdates` and `nextScoreUpdateRoundId` before allowing for updates to happen, and after updates `pendingScoreUpdates` and `isScoreUpdated`. These conditions can be easily circumvented by calling the function [`accrueInterestAndUpdateScore()`](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L389) that allows for updates to happen without going through any of the previously mentioned conditions.
 
-[L - 2] `Prime` - `updateScores()` [reverts](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L207) if a user has exited before the call.
-If a user no longer exists before the call to `updateScores()` has been made, the whole transaction will revert and will not allow for the other user's scores to be updated, incurring in extra gas costs by having to call this function again with a new input.
-
-[L - 3] There is no input validation for the [`updateMultiplier`](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L263) function
+[L - 2] There is no input validation for the [`updateMultiplier`](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L263) function
 In this function, neither the variables `supplyMultiplier` nor `borrowMultiplier` are checked to be between reasonable values
 
 
