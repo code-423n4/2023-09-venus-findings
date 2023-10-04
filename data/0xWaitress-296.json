@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "delay of update on total member score when updating supply/borrowMultiplier",
+  "issueId": 296,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/296"
+}
