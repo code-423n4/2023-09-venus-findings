@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "If two transactions are trying to update the interest and score for the same user and market concurrently, there is a risk of a race condition.",
+  "issueId": 390,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/390"
+}
