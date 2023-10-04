@@ -18,7 +18,7 @@ Aside of that, the system is somewhat centralized from technical point of view (
 The “vital aspects” are:
 - Alpha numerator and denominator being integral part of the score calculation formula
 - Adding new markets to participate in Prime program
-- Ability to issue OG (irrevocable) tokens, or burn prom tokens
+- Ability to issue OG (irrevocable) tokens, or burn Prime tokens
 
 ## Threat modeling 
 Aside of potential centralization risk, which is greatly reduced by using governance, the code has been reviewed and suitable vulnerabilities (if any found) were submitted. The threat modeling shows following areas that could be interesting for the protocol:
@@ -31,6 +31,8 @@ Aside of potential centralization risk, which is greatly reduced by using govern
 
 ## Overall summary
 Overall the code quality is good and consistent. Several possible concerns were raised as separate submissions, including: possibility of accidentally putting the system at inconsistent state, possible wrong reward calculation or possible concerns related multiple loops over storage.
+
+
 
 
 
