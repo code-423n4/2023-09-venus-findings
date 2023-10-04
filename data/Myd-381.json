@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Within the loop, there is another loop that iterates through a list of markets. For each market, the same two functions, `_executeBoost` and `_updateScore`, are called.",
+  "issueId": 381,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/381"
+}
