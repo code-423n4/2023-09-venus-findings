@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "dethera",
+  "risk": "2",
+  "title": "`BLOCKS_PER_YEAR` in `Prime.sol` should vary depending on leap and non-leap year",
+  "issueId": 676,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/676"
+}
