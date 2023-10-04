@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Invalid Fraction Validation in FixedMath Library's `toFixed` Function.",
+  "issueId": 378,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/378"
+}
