@@ -79,5 +79,13 @@ It could be rewritten (semantically) cleaner to use < instead of <=.
 ```Solidity
 uint256 tokenAccrued = (balanceDiff < accruedSinceUpdate ? balanceDiff : accruedSinceUpdate);
 ```
+## L-16 Some NatSpec comments start with a lowercase some with an uppercase letter
+Example for lowercase: https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeStorage.sol#L87
+Example for uppercase: https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeStorage.sol#L60. Should, be consistent throughout the codebase.
+
+## L-17 lessxvsThanCapital variable in Scores.sol does is nor correctly formatted.
+The variable should be written "lessXvsThanCapital" instead of "lessxvsThanCapital" (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/libs/Scores.sol#L52)
+
+
 
 
