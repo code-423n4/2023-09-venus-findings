@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xMosh",
+  "risk": "2",
+  "title": "Mistakenly sent underlying tokens in `PrimeLiquidityProvider.sol` may cause accounting issues in token accrual logic ",
+  "issueId": 567,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/567"
+}
