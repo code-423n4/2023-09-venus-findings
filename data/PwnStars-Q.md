@@ -29,20 +29,14 @@ Description:
 
 updateAlpha , updateMultiplers , addMarket when called updates a round Id through _startScoreUpdate round at L818 and score updates for these rounds take place in the function updateScores() at L200 . If for a round before updateScores() is called for a user the next round gets started ( through updateAlpha , updateMultiplers , addMarket ) then score won’t be updated for that round for the users and isScoreUpdated  will always be false for that round.
 
-## 6 . User Might Mint a Prime Token Even Though The Stake Period Was Less Than 90 Days
 
-Description:
-
-When the user has staked enough XVS he can call xvsUpdated() to set his `stakedAt` mapping to the current timestamp . Then the user has to wait for 90 days to claim his prime token while the minimum required XVS is staked , but the user might unstake in between and call claim() at L397 after 90 days with insufficient stake and still have a prime token minted. This will be serious if there are less users in the system which would not guarantee the liquidation process through xvsUpdated.
-
-
-## 7 . Capital Calculation Might Revert In Future Upgrades
+## 6 . Capital Calculation Might Revert In Future Upgrades
 
 Description:
 
 Capital is calculated here https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L661 , currently vToken will be 8 decimals but other are possible in future , if in future the decimal is more than 18 , capital calculation will always revert and no scores calculated.
 
-## 8 . Incorrect Comment
+## 7 . Incorrect Comment
 
 Description:
 
