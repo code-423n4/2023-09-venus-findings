@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "If multiple transactions attempt to set limits concurrently, there might be a race condition.",
+  "issueId": 386,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/386"
+}
