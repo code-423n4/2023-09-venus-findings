@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xScourgedev",
+  "risk": "2",
+  "title": "ratio in calculateScore can be set to 0, violating important invariant",
+  "issueId": 576,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/576"
+}
