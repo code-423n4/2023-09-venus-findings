@@ -5,14 +5,13 @@
 | NC |  Non-critical | Non risky findings |
 | O | Ordinary | Often found issues |
 
-| Total Found Issues | 4 |
+| Total Found Issues | 3 |
 |:--:|:--:|
 
 
 ### Low Risk 
 | Count | Explanation | Instances |
 |:--:|:-------|:--:|
-| [L-00] |Either Revocable / Irrevocable tokens cannot be minted if  one reaches the maxLimit | 1 |
 | [L-00] | In `Pime.sol` `xvsUpdated()` function could be called by any user| 1 |
 | [L-01] | Prime Token can be issued to zero address    | 1 |
 
@@ -22,77 +21,6 @@
 | Count | Explanation | Instances |
 |:--:|:-------|:--:|
 | [N-00] |In `Prime.sol::_burn()` it's  not essential to set isIrrevocable false if it is already false| 1 |
-
-
-## L-00  Either Revocable / Irrevocable tokens cannot be minted if  one reaches the maxLimit 
-
-## Summary 
-
-If one  type of Prime Token reach the limit we can't mint the other type 
-
-
-## Vulnerability in  details 
-
-
-The limit for minting  revocable and irrevocable  Prime tokens is ,
- 
- ```js
-    /// @notice  Indicates maximum revocable tokens that can be minted
-    uint256 public revocableLimit;
-
-    /// @notice  Indicates maximum irrevocable tokens that can be minted
-    uint256 public irrevocableLimit;
-
-
-```
-It is checked in `_mint` function as below [Prime.sol lineL716](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L716)  ,and lets  say 
-```
- revocableLimit  = 10   
- irrevocableLimit =  10 
-```       
-
-
-```js
-...
-    if (isIrrevocable) {
-            totalIrrevocable++;
-        } else {
-            totalRevocable++;
-        }
-
-        if (totalIrrevocable > irrevocableLimit || totalRevocable > revocableLimit) revert InvalidLimit();
-//                  11  > 10                            5 > 10 
-//                    true                      ||        false     => true   therefore revert 
-
-        emit Mint(user, isIrrevocable);
-
-```
-So that means if either revocable / Irrevocable reach the limit we can't mint the other type   
-
-
-### Tools Used 
-
-Manual Review 
-
-### Mitigation Steps 
-Consider ,
-
-```diff
-...
-    if (isIrrevocable) {
-            totalIrrevocable++;
-+            if (totalIrrevocable > irrevocableLimit ) revert InvalidLimit();
-        } else {
-            totalRevocable++;
-+             if(totalRevocable > revocableLimit) revert InvalidLimit();
-        }
-
--        if (totalIrrevocable > irrevocableLimit || totalRevocable > revocableLimit) revert InvalidLimit();
-       
-
-        emit Mint(user, isIrrevocable);
-
-```
 
 
 ## L-01   In `Pime.sol` `xvsUpdated()` function can be called by arbitrary user
