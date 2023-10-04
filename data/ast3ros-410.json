@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ast3ros",
+  "risk": "2",
+  "title": "Flawed Capital Calculation in Score Computation",
+  "issueId": 410,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/410"
+}
