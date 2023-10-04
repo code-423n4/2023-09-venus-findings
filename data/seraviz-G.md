@@ -1,0 +1,3 @@
+##G-01 Assigning variable values to 0 can be avoided in some cases
+
+In `Prime.sol` these [156](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L156), [295](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L295) and [298](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L298) values are assigned to 0 which can be avoided since all are uint256 values and the default value of them is 0
