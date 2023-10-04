@@ -271,8 +271,28 @@ https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Pri
 
 ## [Gas-10] Some Mapping value could be cached into `storage`
 
-https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L629-L633
 ```diff
+    function _initializeMarkets(address account) internal {
+        address[] storage _allMarkets = allMarkets;
+        for (uint256 i = 0; i < _allMarkets.length; ) {
+            address market = _allMarkets[i];
+            accrueInterest(market);
+
++           Interset storage _interset = interests[market][account];
+-           interests[market][account].rewardIndex = markets[market].rewardIndex;
++           _interset.rewardIndex = markets[market].rewardIndex;
+
+            uint256 score = _calculateScore(market, account);
+-           interests[market][account].score = score;
++           _interset.score = score;
+            markets[market].sumOfMembersScore = markets[market].sumOfMembersScore + score;
+
+            unchecked {
+                i++;
+            }
+        }
+    }
 ```
 
 ## [Gas-11] A extra storage call will be save by caching mathematical operation in memory 
