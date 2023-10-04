@@ -58,5 +58,11 @@ The PrimeLiquidityProvider event only logs the new speed (https://github.com/cod
 ## L-10 TokenNotInitialized event in PrimeLiquidityProvider.sol uses parameter with trailing underscore
 TokenNotInitialized uses the "token_" parameter with trailing underscore (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L75). Other events use the "token" parameter without underscore (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L66). The underscore should be removed.
 
+## L-11 The tokens_ parameter of initialize() function in PrimeLiquidityProvider.sol could be enhanced with a duplication check
+Prior to iterating the passed tokens array or while iterating it (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L103) a duplication check could be introduced making sure a token is not processed multiple times. This would reduced the risk that a token is included more than once but with varying distribution speed which would lead to overwrites.
+
+## L-12 Incrementing the index in loops is not uniform across contracts
+For example here "++1" is used (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L108) and here "i++" is used (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L189).
+
 
 
