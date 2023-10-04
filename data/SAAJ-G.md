@@ -1,9 +1,9 @@
+# Gas Optimizations Report
 
 ## Summary
-	
 
 
-|	|	Issue								| Instances	|
+|	|	Issue								|Instances	|
 | -----|	-----								| -----	|
 |[G-01]| Functions guaranteed to revert when called by normal users can be marked payable	|	03	|
 |[G-02]|Immutable has more gas efficiency than constant					|	07	|
@@ -12,13 +12,11 @@
 
 
 
-
-
-
 # [G 01] Functions guaranteed to revert when called by normal users can be marked payable
 Function with access control marked as payable will be cheaper for legitimate callers: the compiler removes checks for msg.value opcode thus making it more efficient in terms of gas consumption.
 Marking the function as payable will lower the gas cost for legitimate callers.
-```
+
+```diff
 File: 2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol
 
 - 118:  function initializeTokens(address[] calldata tokens_) external onlyOwner {
@@ -41,7 +39,8 @@ Link to the Code:
 # [G-02] Immutable has more gas efficiency than constant
 
 Using immutable instead of constant, save more gas due to avoiding storage access for state variables.
-```
+
+``` diff
 File: 2023-09-venus/contracts/Tokens/Prime/ PrimeStorage.sol
 
 31:    uint256 internal constant EXP_SCALE = 1e18;
@@ -51,7 +50,7 @@ File: 2023-09-venus/contracts/Tokens/Prime/ PrimeStorage.sol
 43:    uint256 internal constant MAXIMUM_BPS = 10000;
 ```
 
-```
+``` diff
 File: 2023-09-venus/contracts/Tokens/Prime/PrimeLiquidityProvider.sol
 
 12:    uint256 public constant MAX_DISTRIBUTION_SPEED = 1e18;
@@ -72,7 +71,8 @@ Link to the Code:
 # [G-03] Revert inside a loop
 Condition inside for loop will carry on, unless it finds one condition that is not met, it will revert the whole transaction. 
 It is recommended that instead of reverting if condition is not true, to just break the loop. This way we don't need to run again the transaction.
-```
+
+``` diff
 File: 2023-09-venus/contracts/Tokens/Prime/ Prime.sol
 
 - 216:         if (!tokens[user].exists) revert UserHasNoPrimeToken();
@@ -86,7 +86,8 @@ Link to the Code:
 # [G-04] It's cheaper to declare the variable outside the loop
 Declaring a variable inside a loop result in variable being re-declared during each loop iteration which consume higher gas.
 The variable gets reallocated when declared outside loop making it more gas efficient.
-```
+
+``` diff
 File: 2023-09-venus/contracts/Tokens/Prime/ Prime.sol
 
 +	address user;
@@ -124,9 +125,10 @@ interests[market][account].rewardIndex = markets[market].rewardIndex;
 ```
 
 Link to the Code:
-1.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L205
+1.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L205 
 2.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L210
 3.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L212
 4.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L336
 5.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L626
 6.	https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L631
+ 
