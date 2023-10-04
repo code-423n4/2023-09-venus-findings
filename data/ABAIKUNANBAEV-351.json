@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ABAIKUNANBAEV",
+  "risk": "2",
+  "title": "If there is a situation where balance is equal to tokenAmountAccrued then it'll be possible to halt the accrual process",
+  "issueId": 351,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/351"
+}
