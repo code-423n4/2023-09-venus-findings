@@ -13,6 +13,7 @@ Under the hood, for each market there are following components of the score calc
 - Percentage of user’s score share in all total contribution score
 
 The system works in as I called them “micro cycles” - rewarding periods - as with each update of the score components (balances, capital, xvs, burn, mint) the rewards for past micro cycle (from last accrue timestamp to now) are accrued and accounted, then new score is calculated, and then the system starts new microcycle from current timestamp (index) to another change. This means, special attention should be paid to intervals of updating, if always new rewards are not accounted to past period for example, IF new changes of components are not introduced before accounting previous system state for past interval. 
+Currently, the protocol mainly updates the rewarding intervals using `accrueInterestAndUpdateScore` function, which splits itself into two main logical operations: first is accruing interest using current score, and second is updating the score, reflecting current changes, after the interest is accrued. This order is very important, otherwise there would be massive issues with rewarding if e.g. latest changes would be accounted before clearing all outstanding accrued interest.
 
 Aside of that, the system is somewhat centralized from technical point of view (there are roles that control vital aspects of the protocol) however as specified in the documentation it is managed by a governance.
 The “vital aspects” are:
@@ -31,6 +32,8 @@ Aside of potential centralization risk, which is greatly reduced by using govern
 
 ## Overall summary
 Overall the code quality is good and consistent. For me it was easiest to use manual approach since there were some compilation issues with current tests.
+
+
 
 
 
