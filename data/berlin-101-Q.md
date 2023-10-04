@@ -1,4 +1,11 @@
-## L-01 updateScores() function in Prime.sol could revert when token of user in passed users array is burned prior to calling this function
+## L-01 Calling _claimInterest() function in Prime.sol re-assigns user's reward index after it was set to 0 when their token was burned
+Burning a token sets the user's score and reward index and score to 0 (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L736-L737). Nevertheless after having a token burned the user can still claim the rewards by calling one of the claimInterest functions in Prime.sol (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L433, https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L443).
+
+These functions don't check whether the user still holds a prime token. They also re-assign the user the respective market reward index (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L676) so the users reward index is not more 0.
+
+I have not found a way to exploit this. Potentially this will skew reward calculation for the user once he claims a prime token again. This should be further explored.
+
+## L-02 updateScores() function in Prime.sol reverts when token of user in passed users array is burned prior to calling this function (frontrun)
 
 The function already implements continue instead of revert if the token of a user was already updated in the current update round id (https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L208). This prevents the function to revert if the user was updated in a previous call or is contained more than once in the passed users array.
 
@@ -13,7 +20,7 @@ To solve the explained issue the updateScores () function could implement the fo
   if (!tokens[user].exists || isScoreUpdated[nextScoreUpdateRoundId][user]) continue;
 ```
 
-## L-02 Prime.sol issue() issue function would be more versatile using an array parameter for isIrrevocable
+## L-03 Prime.sol issue() issue function would be more versatile using an array parameter for isIrrevocable
 Changing the interface of the issue() function (https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L331) to the following would allow issuing irrevocable and revocable tokens with just 1 function call:
 
 ```Solidity
@@ -22,13 +29,13 @@ function issue(bool[] isIrrevocable, address[] calldata users) external {}
 
 It would be necessary though to validate that both arrays have the same length. Using 2 arrays (one for contract/EOA addresses) and another for matching a parameter for each address entry is a common pattern and could be implemented here.
 
-## L-03 Comment for isIrrevocable param of Prime.sol issue() function seems wrong
+## L-04 Comment for isIrrevocable param of Prime.sol issue() function seems wrong
 The tokens are "issued" in either case independent of whether it is an irrevocable token or a revocable token (https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L328). Comment should rather be: "Are issued tokens irrevocable ones" or "Issued tokens are irrevocable".
 
-## L-04 Inconsistent pattern used for resetting stakedAt to 0 in Prime.sol
+## L-05 Inconsistent pattern used for resetting stakedAt to 0 in Prime.sol
 In Prime.sol the stakedAt of a user is reset to 0 in more than 1 place. But different patterns are used to reset the value to 0. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L352 the value is deleted. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L376 the value is assign 0. One of both patterns should be used exclusively to reach consistency.
 
-## L-05 Renaming variables and slight restructuring would give accrueInterest(address vToken) function in Prime.sol more clarity
+## L-06 Renaming variables and slight restructuring would give accrueInterest(address vToken) function in Prime.sol more clarity
 The "distributionIncome" variable (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L568) should better be renamed to sth. like "unreleasedIncome" or "unreleasedPrimeIncome". The following would give the function more clarity (at the expense of 1 additional local variable:
 ```Solidity
 uint256 unreleasedPSRIncome = totalIncomeUnreleased - unreleasedPSRIncome[underlying];
@@ -38,4 +45,3 @@ uint256 unreleasedPLPAccruedInterest = totalAccruedInPLP - unreleasedPLPIncome[u
 
 uint256 unreleasedIncome = unreleasedPSRIncome + totalAccruedInPLP;
 ```
-
