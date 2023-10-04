@@ -30,7 +30,9 @@ Aside of potential centralization risk, which is greatly reduced by using govern
 - Is it possible to put protocol in an inconsistent state, where it will stop working partially or entirely?
 
 ## Overall summary
-Overall the code quality is good and consistent. 
+Overall the code quality is good and consistent. For me it was easiest to use manual approach since there were some compilation issues with current tests.
+
+
 
 
 
