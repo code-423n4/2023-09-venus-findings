@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ast3ros",
+  "risk": "2",
+  "title": "One-size-fits-all MAX_DISTRIBUTION_SPEED is ineffective in PrimeLiquidityProvider",
+  "issueId": 414,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/414"
+}
