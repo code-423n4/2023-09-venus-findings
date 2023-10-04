@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "foxb868",
+  "risk": "3",
+  "title": "Unvalidated `xvs` and capital amounts risk errors in score calculation.",
+  "issueId": 319,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/319"
+}
