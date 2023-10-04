@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Blckhv",
+  "risk": "3",
+  "title": "No zero address check in PrimeLiquidityProvider.sol:sweepTokens",
+  "issueId": 625,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/625"
+}
