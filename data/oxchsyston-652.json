@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "oxchsyston",
+  "risk": "2",
+  "title": "User scores can be wrong due to wrong scaling of the `Capital`.",
+  "issueId": 652,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/652"
+}
