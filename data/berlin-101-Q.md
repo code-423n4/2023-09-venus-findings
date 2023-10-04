@@ -64,5 +64,20 @@ Prior to iterating the passed tokens array or while iterating it (https://github
 ## L-12 Incrementing the index in loops is not uniform across contracts
 For example here "++1" is used (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L108) and here "i++" is used (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L189).
 
+## L-13 The setTokensDistributionSpeed() function should be moved within PrimeLiquidityProvider.sol
+It should be placed under the initializeTokens() functions as both functions are required for adding new tokens (same context). I recommend also moving the pauseFundsTransfer() and resumeFundsTransfer() functions (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L132-L144) to the bottom of the contract. They are a dedicated aspect and should not be put between other contract aspects concerned with funds, rewards, etc..
+
+## L-14 It would be beneficial to have a check for not sweeping any of the accrued tokens for sweep() function in PrimeLiquidityProvider.sol
+The sweep() function (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L216) allows sweeping the full balance of the contract. It only reverts for an attempt to sweep more than the contract balance (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L218). By accident the balance could be corrected to an amount that does not cover the accrued tokens in the PLP anymore. The would otherwise lead to an underflow here (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L261) and a revert trying to send more tokens than available here (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L204).
+
+## L-15 tokenAccrued variable in accrueTokens() functions of PrimeLiquidityProvider.sol could be written a bit cleaner
+Currently the following code is used (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L264):
+```Solidity
+uint256 tokenAccrued = (balanceDiff <= accruedSinceUpdate ? balanceDiff : accruedSinceUpdate);
+```
+It could be rewritten (semantically) cleaner to use < instead of <=.
+```Solidity
+uint256 tokenAccrued = (balanceDiff < accruedSinceUpdate ? balanceDiff : accruedSinceUpdate);
+```
 
 
