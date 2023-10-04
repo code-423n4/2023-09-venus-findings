@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "DMoore",
+  "risk": "3",
+  "title": "Wrongly presume VToken's decimal is 1e18 could cause supply calculation wrong",
+  "issueId": 321,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/321"
+}
