@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "J4X",
+  "risk": "3",
+  "title": "Implementation of `rewardIndex` leads to inevitable DOS of the market",
+  "issueId": 432,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/432"
+}
