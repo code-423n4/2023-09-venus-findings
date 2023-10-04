@@ -12,7 +12,7 @@ Under the hood, for each market there are following components of the score calc
 - User’s individual contribution to staking, borrowing and lending and
 - Percentage of user’s score share in all total contribution score
 
-The system works in as I called them “micro cycles” as with each update of the score components (balances, capital, xvs, burn, mint) the rewards for past micro cycle (from last accrue timestamp to now) are accrued and accounted, and then the system starts new microcycle from current timestamp (index) to another change. This means, special attention should be paid to intervals of updating, if always new rewards are not accounted to past period for example, IF new changes of components are not introduced before accounting previous system state for past interval.
+The system works in as I called them “micro cycles” - rewarding periods - as with each update of the score components (balances, capital, xvs, burn, mint) the rewards for past micro cycle (from last accrue timestamp to now) are accrued and accounted, and then the system starts new microcycle from current timestamp (index) to another change. This means, special attention should be paid to intervals of updating, if always new rewards are not accounted to past period for example, IF new changes of components are not introduced before accounting previous system state for past interval.
 
 Aside of that, the system is somewhat centralized from technical point of view (there are roles that control vital aspects of the protocol) however as specified in the documentation it is managed by a governance.
 The “vital aspects” are:
@@ -30,7 +30,9 @@ Aside of potential centralization risk, which is greatly reduced by using govern
 - Is it possible to put protocol in an inconsistent state, where it will stop working partially or entirely?
 
 ## Overall summary
-Overall the code quality is good and consistent. Several possible concerns were raised as separate submissions, including: possibility of accidentally putting the system at inconsistent state, possible wrong reward calculation or possible concerns related multiple loops over storage.
+Overall the code quality is good and consistent. 
+
+
 
 
 
