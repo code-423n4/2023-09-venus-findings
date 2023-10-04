@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ast3ros",
+  "risk": "2",
+  "title": "Prime Contract's Incompatibility with Fee on Transfer Tokens",
+  "issueId": 409,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/409"
+}
