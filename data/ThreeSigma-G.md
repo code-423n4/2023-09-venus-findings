@@ -1,3 +1,5 @@
+## Gas Optimizations
+
 [GAS - 1] `PrimeLiquidityProvider` [`accrueTokens(token_)`](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L249-L272) should return the `accruedAmount` to save gas 
 In [lines 570 and 571](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L570-L571) of `Prime`, `accrueTokens` is called and it is followed by another call to the the `PrimeLiquidityProvider` contract to fetch the value of `tokenAmountAccrued[token_]`. By having `accrueTokens` immediately return this value, it would save over 1000 gas on calls to `accrueInterest()` and would improve the `releaseFunds()` function of the `PrimeLiquidityProvider`
 
