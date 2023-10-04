@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "daniel_dimitrov5",
+  "risk": "2",
+  "title": "Possible DOS when PLP is paused",
+  "issueId": 360,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/360"
+}
