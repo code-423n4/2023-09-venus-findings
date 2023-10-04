@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "KrisApostolov",
+  "risk": "2",
+  "title": "Lack of automated score updates in the case of a drastic vToken price change",
+  "issueId": 512,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/512"
+}
