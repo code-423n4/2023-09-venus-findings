@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Satyam_Sharma",
+  "risk": "2",
+  "title": "_capitalForScore might return  zero cappedSupply and cappedBorrow for a user",
+  "issueId": 307,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/307"
+}
