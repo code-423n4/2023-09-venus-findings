@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "neumo",
+  "risk": "2",
+  "title": "The hardcoded value of MAX_DISTRIBUTION_SPEED makes impossible the use of low valued tokens like SHIB",
+  "issueId": 456,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/456"
+}
