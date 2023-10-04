@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Fulum",
+  "risk": "2",
+  "title": "The immutable numbers of markets in `Prime` contract makes it impossible to add new markets.",
+  "issueId": 491,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/491"
+}
