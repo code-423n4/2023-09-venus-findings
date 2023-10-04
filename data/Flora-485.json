@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Flora",
+  "risk": "2",
+  "title": "A user can frontrun and receive a revocable token when the `issue` function is executed, even though they’re no longer qualified.",
+  "issueId": 485,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/485"
+}
