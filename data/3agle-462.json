@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "3agle",
+  "risk": "2",
+  "title": "A malicious user can break accounting of PrimeLiquidityProvider in specific condition",
+  "issueId": 462,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/462"
+}
