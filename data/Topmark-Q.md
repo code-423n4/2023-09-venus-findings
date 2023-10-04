@@ -14,7 +14,7 @@ https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Pri
         emit TokenUpgraded(user);
     }
 ```
-As noted above proper error handling should be added to the code depending on sponsors preference
+As noted above proper error handling should be added to the code depending on sponsors preference other instances can be found at [L568](https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L568)
 ### Report 2:
 No Upper limit when setting _alphaDenominator, which could cause DOS without proper error handling.
 https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L809-L813
