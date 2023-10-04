@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "ThreeSigma",
+  "risk": "2",
+  "title": "The result of calls to getEffectiveDistributionSpeed(), calculateAPR() and estimateAPR() can be manipulated by anyone.",
+  "issueId": 534,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/534"
+}
