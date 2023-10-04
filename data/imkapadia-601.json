@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "imkapadia",
+  "risk": "3",
+  "title": "Lack of Access Control for Critical Functions",
+  "issueId": 601,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/601"
+}
