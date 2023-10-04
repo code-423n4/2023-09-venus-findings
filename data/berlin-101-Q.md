@@ -25,4 +25,6 @@ It would be necessary though to validate that both arrays have the same length. 
 ## L-03 Comment for isIrrevocable param of Prime.sol issue() function seems wrong
 The tokens are "issued" in either case independent of whether it is an irrevocable token or a revocable token (https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L328). Comment should rather be: "Are issued tokens irrevocable ones" or "Issued tokens are irrevocable".
 
-## L-04
+## L-04 Inconsistent pattern used for resetting stakedAt to 0 in Prime.sol
+In Prime.sol the stakedAt of a user is reset to 0 in more than 1 place. But different patterns are used to reset the value to 0. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L352 the value is deleted. In https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/Prime.sol#L376 the value is assign 0. One of both patterns should be used exclusively to reach consistency.
+
