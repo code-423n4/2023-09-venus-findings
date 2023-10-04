@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Pessimistic",
+  "risk": "2",
+  "title": "Users with newly claimed Prime tokens are able to block updateScores function",
+  "issueId": 537,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/537"
+}
