@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Maroutis",
+  "risk": "2",
+  "title": "Gas Limit Issues/DoS with Block Gas Limit",
+  "issueId": 653,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/653"
+}
