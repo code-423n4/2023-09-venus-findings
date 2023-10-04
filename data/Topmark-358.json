@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "AlphaNumerator can be set to Zero due to Mistake in Validation code",
+  "issueId": 358,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/358"
+}
