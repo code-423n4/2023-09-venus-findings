@@ -1,7 +1,7 @@
 # Our Analysis Of The Codebase
 
 
-Me with my team mate qb decided to take part in the Venus Prime contest on Code4rena with the goal of finding as many flaws in the system and help the protocol to be as secure as possible before it’s launch.
+Me with my team mate qbs decided to take part in the Venus Prime contest on Code4rena with the goal of finding as many flaws in the system and help the protocol to be as secure as possible before it’s launch.
 The codebase (the scope for the contest) was focused mainly on two contracts i.e. PrimeLiquidityProvider.sol and Prime.sol . To explain the system in simple terms a user needs to stake $XVS to receive a prime token which is used to boost rewards across markets . The user needs to stake 1000 XVS minimum for at least 90 days in order to be eligible for the prime token.
 
 
@@ -52,6 +52,8 @@ It was because of this “keep going” attitude we were successful in finding b
 Venus Prime used Cobb-Douglas function in order to calculate score and rewards . Efforts were made to understand the core logic of this function and how it applies to the reward system and look at reward distribution through a mathematical point of view.
 
 To make things clearer throughout the process we built flow graphs and made interactive notes to make sense of the state changes that happened throughout . This proved out to be essential in understanding the system better and make the whole audit process effecient and better.
+
+
 
 
 
