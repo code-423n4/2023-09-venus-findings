@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "SPYBOY",
+  "risk": "2",
+  "title": "Lack of Eligibility Check Before Minting Prime Tokens in issue()",
+  "issueId": 466,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/466"
+}
