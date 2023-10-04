@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "imare",
+  "risk": "2",
+  "title": "token burn breaks for the user from getting the `Prime` token back",
+  "issueId": 504,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/504"
+}
