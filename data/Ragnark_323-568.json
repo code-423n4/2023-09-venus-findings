@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Ragnark_323",
+  "risk": "2",
+  "title": "functions estimateAPR() ,  _calculateScore() , _initializeMarkets() may revert due to large value of n/d in toFixed() in FixedMath.sol",
+  "issueId": 568,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/568"
+}
