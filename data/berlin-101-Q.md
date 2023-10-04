@@ -86,6 +86,6 @@ Example for uppercase: https://github.com/code-423n4/2023-09-venus/blob/main/con
 ## L-17 lessxvsThanCapital variable in Scores.sol does is nor correctly formatted.
 The variable should be written "lessXvsThanCapital" instead of "lessxvsThanCapital" (https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/libs/Scores.sol#L52)
 
-
-
-
+## L-18
+Comment for lastAccruedBlock in PrimeLiquidityProvider seems wrong
+https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L23. It is rather "The block the last time token were accrued" instead of "The rate at which token is distributed to the Prime contract". Most likely this is a partial copy paste issue from here: https://github.com/code-423n4/2023-09-venus/blob/main/contracts/Tokens/Prime/PrimeLiquidityProvider.sol#L20. Should be corrected.
