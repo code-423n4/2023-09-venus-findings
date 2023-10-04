@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xbrett8571",
+  "risk": "3",
+  "title": "Unchecked return value risk in `getUnreleasedFunds` function impacts protocol fairness, stability.",
+  "issueId": 364,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/364"
+}
