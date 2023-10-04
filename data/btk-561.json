@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "btk",
+  "risk": "2",
+  "title": "Missing to scale the capital value to the vToken decimals",
+  "issueId": 561,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/561"
+}
