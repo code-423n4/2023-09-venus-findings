@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "foxb868",
+  "risk": "3",
+  "title": "Unchecked `getUnreleasedFunds` return may expose contract to vulnerabilities if issues arise.",
+  "issueId": 324,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/324"
+}
