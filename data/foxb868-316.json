@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "`estimateAPR` function lacks input validation, risking inaccurate APR calculations.",
+  "issueId": 316,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/316"
+}
