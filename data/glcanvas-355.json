@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "glcanvas",
+  "risk": "2",
+  "title": "Incorrect APR calculation",
+  "issueId": 355,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/355"
+}
