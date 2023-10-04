@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "dethera",
+  "risk": "2",
+  "title": "Infinity loop and DoS in `updateScores` function in `Prime.sol` file",
+  "issueId": 510,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/510"
+}
