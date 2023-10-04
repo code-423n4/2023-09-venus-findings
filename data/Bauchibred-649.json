@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Bauchibred",
+  "risk": "3",
+  "title": "Prime.sol currently miscalculates the duration users have already staked, which breaks multiple core functions.",
+  "issueId": 649,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/649"
+}
