@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "imkapadia",
+  "risk": "2",
+  "title": "Unauthorized Access to `claimInterest()` in `Prime` Contract",
+  "issueId": 579,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/579"
+}
