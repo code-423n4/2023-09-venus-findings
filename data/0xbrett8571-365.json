@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Limited Input Validation in `isEligible` Function.",
+  "issueId": 365,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/365"
+}
