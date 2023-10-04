@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "turvy_fuzz",
+  "risk": "3",
+  "title": "operation on `pendingScoreUpdates` variable can cause DOS on the `updateScores` function",
+  "issueId": 341,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/341"
+}
