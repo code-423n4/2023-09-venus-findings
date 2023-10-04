@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "0xPetroff",
+  "risk": "3",
+  "title": "It is possible to manipulate ``accrueTokens()`` to produce almost no rewards.",
+  "issueId": 472,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/472"
+}
