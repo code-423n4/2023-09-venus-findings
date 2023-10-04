@@ -373,7 +373,7 @@ can be rewritten to:
 ```
 
 # [G-13] Unnecessary variable declaration in `_interestAccrued` in `Prime.sol`
-Variables `index` and `score` are used only once, which means, that below code:
+Variables `incomePerBlockForDistributionFromMarket` and `totalIncomePerBlockFromMarket` are used only once, which means, that below code:
 [File: contracts/Tokens/Prime/Prime.sol](https://github.com/code-423n4/2023-09-venus/blob/b11d9ef9db8237678567e66759003138f2368d23/contracts/Tokens/Prime/Prime.sol#L971-L974)
 ```
   uint256 totalIncomePerBlockFromMarket = _incomePerBlock(vToken);
