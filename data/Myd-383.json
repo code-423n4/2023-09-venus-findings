@@ -1,0 +1,8 @@
+{
+  "contest": 290,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Inconsistency in `alpha` values can lead to incorrect incentives, rewards, or penalties within the system.",
+  "issueId": 383,
+  "issueUrl": "https://github.com/code-423n4/2023-09-venus-findings/issues/383"
+}
